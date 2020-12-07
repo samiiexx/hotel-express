@@ -1,0 +1,498 @@
+body {
+    font-family: $font-primary;
+    font-weight: $font-normal;
+    font-size: 16px;
+    color: $dark;
+    width: 100%;
+}
+
+.py {
+    padding: 6rem 0;
+}
+
+.dots {
+    margin-left: 0.5rem;
+    opacity: 0.75;
+}
+
+// Header Styles
+.header {
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+// Nav Styles
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: auto;
+    width: 70px;
+}
+
+.hamburger-menu {
+    font-size: 2rem;
+    color: $white;
+    cursor: pointer;
+    position: relative;
+    z-index: 1500;
+    @include screen('xl') {
+        display: none;
+    }
+    .fa-times {
+        display: none;
+    }
+}
+
+.menu-open .hamburger-menu .fa-times {
+    display: block;
+}
+
+.menu-open .hamburger-menu .fa-bars {
+    display: none;
+}
+
+.nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $deep-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+    @include screen('xl') {
+        position: initial;
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: initial;
+        opacity: 1;
+        transform: scale(1);
+    }
+    .menu-open & {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .nav-item:not(:last-child) {
+        margin-bottom: .5rem;
+        @include screen('xl') {
+            margin-right: 3rem;
+            margin-bottom: 0;
+        }
+    }
+    .nav-link {
+        display: block;
+        color: $white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding: 1rem 0;
+        @include screen('xl') {
+            font-size: 1rem;
+            font-weight: normal;
+            transition: color 0.5s;
+            &:hover {
+                color: $blue-solid;
+            }
+        }
+    }
+}
+
+// Hero Styles
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../images/hero_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.main-heading {
+    color: $white;
+    .title {
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        @include screen('md') {
+            font-size: 4rem;
+        }
+        @include screen('xl') {
+            font-size: 6rem;
+        }
+    }
+    .sub-title {
+        font-size: 2rem;
+        font-weight: 300;
+        font-family: $font-secondary;
+        @include screen('md') {
+            font-size: 3.5rem;
+        }
+        @include screen('xl') {
+            font-size: 5rem;
+        }
+    }
+}
+
+// Booking Styles
+.booking {
+    background: $gradient-color;
+}
+
+.input-group {
+    padding-bottom: 1rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: bold;
+    padding-bottom: .5rem;
+}
+
+.input,
+.options {
+    outline: none;
+    border: none;
+    padding: 0.5rem 0.2rem;
+    font-weight: bold;
+    color: $gray;
+    font-family: $font-primary;
+    width: 100%;
+    @include screen('xl') {
+        min-width: 10rem;
+    }
+}
+
+.check-in-out {
+    @include screen('md') {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.check-in,
+.check-out {
+    @include screen('md') {
+        width: 45%;
+    }
+}
+
+.adult-and-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adult,
+.child {
+    width: 45%;
+}
+
+.featured {
+    color: $white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: -1;
+    }
+}
+
+.hotel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.hotel-name {
+    font-size: 1.5rem;
+}
+
+.hotel-rating {
+    margin: 1rem 0 2rem;
+}
+
+.rating {
+    color: #fbda46;
+}
+
+// Hotels Styles
+.main-title {
+    text-align: center;
+}
+
+.heading {
+    display: block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    @include screen('md') {
+        font-size: 2rem;
+    }
+    @include screen('xl') {
+        font-size: 3rem;
+    }
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    font-family: $font-secondary;
+    color: $gray;
+    font-weight: 300;
+    @include screen('md') {
+        font-size: 2rem;
+    }
+    @include screen('xl') {
+        font-size: 3rem;
+    }
+}
+
+// Special Offer Styles
+.offer {
+    background: $gradient-color bottom center no-repeat;
+    background-size: cover;
+}
+
+.offer-content {
+    background-color: $white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.discount {
+    background-color: $blue-solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: 2px solid $blue-solid;
+    outline-offset: 0.5rem;
+}
+
+.paragraph {
+    color: $gray;
+}
+
+// Rooms Styles
+.rooms {
+    background-color: $offwhite;
+}
+
+.rooms-grid {
+    @include screen('md') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include screen('xl') {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.featured-rooms {
+    @include screen('xl') {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.image-wrap {
+    position: relative;
+    height: 15rem;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-name {
+    font-size: 1.5rem;
+    background-color: $blue-solid;
+    color: $white;
+    padding: 0.5rem;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    z-index: 10;
+}
+
+.room-info-wrap {
+    @include screen('xl') {
+        margin-left: 1.5rem;
+    }
+}
+
+.room-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $blue-solid;
+    padding-top: .5rem;
+}
+
+.per-night {
+    color: darken( $blue-solid, 20);
+}
+
+.rooms-btn {
+    @extend %btn;
+    border: 2px solid $blue-solid;
+    color: $gray;
+    &:hover {
+        color: $blue-solid;
+    }
+}
+
+// Contact Section Styles
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    @include screen('xl') {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .offer,
+    .contact-form {
+        margin-bottom: 2rem;
+        @include screen('xl') {
+            flex: 0 0 45%;
+        }
+    }
+}
+
+.contact-form {
+    background-image: $gradient-color;
+    padding: 1rem;
+    .input {
+        display: block;
+        width: 100%;
+        background: transparent;
+        color: $white;
+        font-weight: normal;
+        border-bottom: 2px solid $white;
+        padding-left: 0;
+        &:focus+.bar::after {
+            transform: scaleX(1);
+        }
+    }
+    .bar {
+        display: block;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $blue-solid;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.5s;
+        }
+    }
+}
+
+// Footer Styles
+.footer {
+    background-color: $deep-blue;
+    color: $white;
+    @include screen('md') {
+        font-size: 1.2rem;
+    }
+    @include screen('xl') {
+        font-size: 1.5rem;
+    }
+    .paragraph {
+        color: inherit;
+        @include screen('md') {
+            padding-right: 2rem;
+        }
+    }
+}
+
+.footer-content {
+    @include screen('md') {
+        display: flex;
+    }
+}
+
+.footer-content-brand {
+    margin-bottom: 5rem;
+    @include screen('md') {
+        margin-bottom: 0;
+        flex: 0 0 50%;
+    }
+}
+
+.footer-heading {
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+.social-media {
+    display: flex;
+    .social-media-link {
+        font-size: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid $blue-solid;
+        border-radius: 50%;
+        display: flex;
+        margin-right: 1rem;
+        transition: background-color 0.5s;
+        &:hover {
+            background-color: $blue-solid;
+            color: $dark;
+        }
+        i {
+            margin: auto;
+        }
+    }
+}

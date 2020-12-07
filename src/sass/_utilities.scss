@@ -1,0 +1,65 @@
+// Defaults
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+// Layouts
+.container {
+    margin: 0 auto;
+    max-width: $xl;
+    padding: 0 1.5rem;
+}
+
+.contained-text {
+    width: 250px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+}
+
+// Components
+%btn {
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-gradient {
+    @extend %btn;
+    background: $gradient-color;
+    &:hover {
+        background: $gradient-color-alt;
+    }
+}
+
+.form-btn {
+    @extend %btn;
+    margin-top: 1rem;
+    color: $gray;
+    cursor: pointer;
+    background: $offwhite;
+    &:hover {
+        background: $gradient-color-alt;
+        color: $offwhite;
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "name": "hotel-express",
+    "version": "1.0.0",
+    "description": "This is a hotel booking website",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Favour Samuel",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.13",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-file-include": "^2.2.2",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2"
+    },
+    "browserslist": [
+        "> 1%",
+        "ie >= 8",
+        "edge >= 15",
+        "ie_mob >= 10",
+        "ff >= 31",
+        "chrome >= 45",
+        "safari >= 7",
+        "opera >= 23",
+        "ios >= 7",
+        "android >= 4",
+        "bb >= 10"
+    ]
+}

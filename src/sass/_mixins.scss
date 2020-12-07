@@ -1,0 +1,19 @@
+@mixin screen($size) {
+    $xl: "(min-width: 1000px)";
+    $md: "(min-width: 768px)";
+    @if $size==xl {
+        @media only screen and #{$xl} {
+            @content;
+        }
+    }
+    @else if $size==md {
+        @media only screen and #{$md} {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and #{$size} {
+            @content;
+        }
+    }
+}

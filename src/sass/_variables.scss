@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+
+/* Colors */
+
+$white: #ffffff;
+$offwhite: #f2f6f9;
+$gray: #a5a5a5;
+$dark: #2d2c2c;
+$deep-blue: #273952;
+$blue-transparent: rgba(17,
+209,
+194,
+.7);
+$blue-transparent-alt: rgba(17,
+209,
+194,
+.2);
+$blue-light: #8AC0D8;
+$blue-solid: #0fa7e8;
+$gradient-color-alt: linear-gradient(to right,
+$blue-solid,
+$blue-light);
+$gradient-color: linear-gradient(to right,
+$blue-light,
+$blue-solid);
+// Typography
+$font-primary: 'Open Sans',
+sans-serif;
+$font-secondary: 'Courgette',
+cursive;
+$font-normal: 400;
+$font-bold: 800;
+// Screens
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
