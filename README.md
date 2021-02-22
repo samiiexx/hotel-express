@@ -14,7 +14,7 @@ This is a test project for Hotel Express.
 
 ## Install
 ```
-    $ git clone git@github.com:samiiexx/coffee-hub.git main
+    $ git clone git@github.com:samiiexx/hotel-express.git main
     $ cd main
     $ npm install
 ```
