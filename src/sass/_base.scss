@@ -292,17 +292,52 @@ body {
     overflow: hidden;
 }
 
-.discount {
-    background-color: $blue-solid;
-    position: absolute;
-    top: 0;
-    left: 0;
+// .discount {
+//     background-color: $blue-solid;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     padding: 1rem;
+//     font-weight: bold;
+//     text-transform: uppercase;
+//     outline: 2px solid $blue-solid;
+//     outline-offset: 0.5rem;
+// }
+.inner {
+    background: $blue-light;
     padding: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    outline: 2px solid $blue-solid;
-    outline-offset: 0.5rem;
+    border-radius: 1rem;
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+    clip-path: circle(10% at 10% 85%);
+    transition: clip-path 0.5s;
+    
+    &:hover{
+        clip-path: circle(85%);
+    }
 }
+
+.span {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0.6rem;
+    left: .4rem;
+}
+
+.inner:hover .span {
+    color: rgba(255, 255, 255, 0);
+   }
+
+ .text-bold {
+       font-size: 1.2rem;
+       text-transform: uppercase;
+       color: $offwhite;
+   }
+
+   .inner-text {
+       color: $offwhite;
+   }
 
 .paragraph {
     color: $gray;
